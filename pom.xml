@@ -9,6 +9,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
-        <exec.mainClass>servidor.hlc.prueba_servidor_hilos.HLCPrueba_Servidor_Hilos</exec.mainClass>
+        <exec.mainClass>servidor.hlc.prueba_servidor_hilos.Cliente</exec.mainClass>
     </properties>
 </project>
