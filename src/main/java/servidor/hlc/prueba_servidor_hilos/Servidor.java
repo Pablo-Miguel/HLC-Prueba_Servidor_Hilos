@@ -30,23 +30,9 @@ public class Servidor {
 
             Socket conexionCliente = servidor.accept();
 
-            InputStream entrada = conexionCliente.getInputStream();
-
-            DataInputStream flujoEntrada = new DataInputStream(entrada);
-
-            System.out.println("Mensaje del CLIENTE " + i + ":\n\t" + flujoEntrada.readUTF() + "\n");
-
-            OutputStream salida = conexionCliente.getOutputStream();
-
-            DataOutputStream flujoSalida = new DataOutputStream(salida);
-
-            flujoSalida.writeUTF("Saludos al cliente " + i + " del servidor");
-
-            entrada.close();
-            flujoEntrada.close();
-            salida.close();
-            flujoSalida.close();
-            conexionCliente.close();
+            HiloServidor hiloServidor = new HiloServidor(conexionCliente, i);
+            
+            hiloServidor.start();
 
         }
 
